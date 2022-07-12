@@ -1,0 +1,18 @@
+body{
+    background-color: #9c6a6a;
+    background-image: url(https://salarmycentral.org/wp-content/uploads/wood-grain-from-commissioning-poster.jpg);
+    background-size: 2050px;
+    position:absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.plainBoard {
+    background-color: rgb(42, 87, 42);
+    position: absolute;
+    width: 70vw;
+    height: 50vh;
+    top: 20%;
+    left: 15%;
+    border-radius: 68px 81px 86px 84px / 83px 93px 100px 86px;
+}
