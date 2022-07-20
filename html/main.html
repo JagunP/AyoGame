@@ -13,14 +13,134 @@
     <link rel="stylesheet" href="C:\Users\jagun\OneDrive\Documents\GitHub\AyoGame\css\style.css"> 
     <!-- copy full path -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"> -->
-
+    <script src="C:\Users\jagun\OneDrive\Documents\GitHub\AyoGame\js\script.js"></script>
 </head>
 
 <body>
     <!-- Ayo Game -->
-   <div class="plainBoard"></div>
-   <!-- <img src="C:\Users\jagun\OneDrive\Documents\GitHub\AyoGame\ayogame.jpg" alt="tabletop"> -->
+    
+    <!-- The player side tables -->
+    <div id = "player2" class="playerBoard" style = "left: 660px;top: 10px;;">Player 2 </div>
+    <div id = "player1" class="playerBoard" style = "right: 590px;bottom:3px;">Player 1</div>
+    
+    <!-- Just the board with it's 12 holes -->
+    <div id="plainBoard">
+        <holes style = "left: 1%; top: 5%; background:rgba(217, 217, 217, 0.8);">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 1%;top: 52%; background:#604141;">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 17%;top: 5%; background:rgba(217, 217, 217, 0.8);">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 17%;top: 52%; background:#604141;">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 33%;top: 5%; background:rgba(217, 217, 217, 0.8);">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 33%;top: 52%; background:#604141;">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 50%;top: 5%; background:rgba(217, 217, 217, 0.8);">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 50%;top: 52%; background:#604141;">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 67%;top: 5%; background:rgba(217, 217, 217, 0.8);">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 67%;top: 52%; background:#604141;">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 83%;top: 5%; background:rgba(217, 217, 217, 0.8);">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+        <holes style = "left: 83%;top: 52%; background:#604141;">
+            <div class = "stones" style="left:30%; top:30%;"></div>
+            <div class = "stones" style="left:30%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:60%;"></div>
+            <div class = "stones" style="left:60%; top:30%;"></div>
+        </holes>
+    </div>    
+   
+    <!-- This is the instructions pop up -->
+   <div id = "Instructions"  style = "visibility:visible;left: 397px;top: 194px;">
+        <h3 id = "instruct1" style=" visibility:visible; padding: 20px;color: #000000;line-height: 39px;font-size: 32px;font-weight: 400;font-family: 'Inter';font-style: normal">
+            How To Play: <br> <br>
+            The Goal of this game is to have more houses captured than your Opponent. A house is any hole on the board that has exactly 4 stones.<br>
+            <ol>
+                <li>
+                     Each player starts off taking stones from any hole in their row, and dropping it into the next hole in a counterclockwise motion. After the last stone is dropped, the player takes the stones in the last hole and continues on till their final stone is dropped in an empty hole. 
+                </li>
+            </ol>
+            
+        </h3>
+        <button id = "firstbtn" onclick="Intro()" style="color: black;left: 81%;top: 88%;">  
+            Next -> 
+        </button>
+        <h3 id = "instruct2" style=" visibility: hidden;padding: 20px;color: #000000;line-height: 39px;font-size: 32px;font-weight: 400;font-family: 'Inter';font-style: normal">
+            How To Play: <br> 
+                <ul>
+                    <li style="list-style-type: none;">2. After each player goes, they get to claim any hole that has exactly 4 stones by removing its contents (the 4 stones) from the board. This is called “Taking a house”. </li>
+                    <li style="list-style-type: none;">3. The player with the most houses wins the round, and the player with 3 consecutive wins is crowned the “Ota” -- the winner, and the loser is the “Ope”. <br>
+                </ul>
+        </h3>
+        <button id = "secbtn" onclick="Intro2()" style="left: 81%;top: 185%;visibility: hidden;color: black;">
+            Next -> 
+        </button> 
+        <h3 id = "instruct3" style=" visibility: hidden;padding: 20px;color: #000000;line-height: 39px;font-size: 32px;font-weight: 400;font-family: 'Inter';font-style: normal">
+            Remember:<br><br>
+            <ul>
+            <li style="list-style-type: none;">This is a game of strategy!! </li><br> 
+            <li style="list-style-type: none;">You need to constantly be thinking of ways 
+            to create holes of 4 by strategically picking your starting pile. </li><br>
+            <li style="list-style-type: none;">And don’t forget to have fun!! </li> <br>
+        </ul>
+        </h3>
+        <button id="yay" style = "left: 81%;top: 275%;visibility: hidden;color: black;" onclick="StartGame()">
+            I'm Ready! 
+        </button>
+   </div>
+
+
 
 
 </body>
 </html>
+
