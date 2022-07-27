@@ -57,6 +57,21 @@ body{
 
 }
 
+input{
+    background: #f6f6f8;
+    border: 0;
+    border-radius: 30px;
+    box-shadow: none;
+    color: #000;
+    font-size: 16px;
+    height: 40px;
+    line-height: 16px;
+    outline: none;
+    padding-left: 16px;
+    padding-right: 32px;
+    width: 100px;
+}
+
 .playerBoard{
     background-image: url(https://salarmycentral.org/wp-content/uploads/wood-grain-from-commissioning-poster.jpg);
     background-size: 50%;
@@ -65,6 +80,7 @@ body{
     height: 187px;
     border-radius: 64px;
     transform: matrix(1, 0, -0.01, 1, 0, 0);
+    font-size: 70px;
 }
 
 #Instructions{
