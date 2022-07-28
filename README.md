@@ -1,3 +1,3 @@
 # AyoGame
 
-A Summer Project by Krisha and Precious ... More Details coming ;)
+A Summer Project by Precious ... More Details coming ;)
