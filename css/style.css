@@ -33,8 +33,6 @@ body{
     border-radius: 112px;
     transform: matrix(1, 0, -0.01, 1, 0, 0);
     box-shadow:  5px 10px 5px;
-
-
 }
 
 #plainBoard > holes{
@@ -43,8 +41,6 @@ body{
     height: 189px;
     border-radius: 112%;
     box-shadow:  5px 10px 5px;
-
-    /* background: linear-gradient(0deg, rgba(217, 217, 217, 0.8), rgba(217, 217, 217, 0.8)), #604141; */
     mix-blend-mode: hard-light;
 
 }
@@ -53,9 +49,7 @@ body{
     position: absolute;
     width: 26px;
     height: 25px;
-    border-radius: 50%;
-    /* visibility: hidden; */
-    
+    border-radius: 50%;    
     background: #D9D9D9;
 }
 
@@ -84,18 +78,14 @@ input{
     transform: matrix(1, 0, -0.01, 1, 0, 0);
     font-size: 70px;
     box-shadow:  5px 10px 5px;
-
 }
 
 #Instructions{
-    /* Rectangle 5 */
-
     position: absolute;
     width: 906px;
     height: 510px;
     background: #F5F5F5;
 }
-
 
 button{
     position: inherit;
@@ -104,12 +94,35 @@ button{
     border: none;
     background: #D9D9D9;
     font-size: 26px;
-    /* background: #D9D9D9; */
-
 }
 
 #Instructions > button:hover {
-    /* background-color: #4CAF50; */
     color: white;
     border: 3px solid black;
+}
+
+.exit{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    left: 95%;
+    top: 0%;
+    background-color: aliceblue;
+}
+
+#house{
+    position: absolute;
+    width: 20vw;
+    height: 20vh;
+    border-radius: 50%;
+    background: rgba(217, 217, 217, 0.8);
+}     
+     
+#house > stoneWin{
+    position: absolute;
+    width: 5vw;
+    height: 5vh;
+    background: #D9D9D9;
+    border-radius: 50%;    
 }

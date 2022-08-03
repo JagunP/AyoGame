@@ -20,7 +20,7 @@
     <!-- Ayo Game -->
     
     <!-- The player side tables -->
-    <div id = "player2" class="playerBoard" style = "left: 660px;top: 10px;;">
+    <div id = "player2" class="playerBoard" style = "left: 660px;top: 10px;">
         <input id="play2" type="text" placeholder="Player 2" size="5" formtarget="framename">
         <!-- Player 2  -->
     </div>
@@ -31,35 +31,38 @@
 
     <!-- Just the board with it's 12 holes -->
     <div id="plainBoard">
-        <holes id = "hole12" onclick= "playGame(12)" style = "left: 1%; top: 5%; background:#604141;">
+        <holes id = "hole12" onmouseover="hover(12)" onmouseout="out(12)" onclick= "playGame(12)" style = "left: 1%; top: 5%; background:#604141;">
         </holes>
-        <holes id = "hole1" onclick= "playGame(1)" style = "left: 1%;top: 52%; background:rgba(217, 217, 217, 0.8);">
+        <holes id = "hole1" onmouseover="hover(1)" onmouseout="out(1)" onclick= "playGame(1)" style = "left: 1%;top: 52%; background:rgba(217, 217, 217, 0.8);">
         </holes>
-        <holes id = "hole11" onclick= "playGame(11)" style = "left: 17%;top: 5%; background:#604141;">
+        <holes id = "hole11" onmouseover="hover(11)" onmouseout="out(11)" onclick= "playGame(11)" style = "left: 17%;top: 5%; background:#604141;">
         </holes>
-        <holes id = "hole2" onclick= "playGame(2)" style = "left: 17%;top: 52%; background:rgba(217, 217, 217, 0.8);">
+        <holes id = "hole2" onmouseover="hover(2)" onmouseout="out(2)" onclick= "playGame(2)" style = "left: 17%;top: 52%; background:rgba(217, 217, 217, 0.8);">
         </holes>
-        <holes id = "hole10" onclick= "playGame(10)" style = "left: 33%;top: 5%; background:#604141;">
+        <holes id = "hole10" onmouseover="hover(10)" onmouseout="out(10)" onclick= "playGame(10)" style = "left: 33%;top: 5%; background:#604141;">
         </holes>
-        <holes id = "hole3" onclick= "playGame(3)" style = "left: 33%;top: 52%; background:rgba(217, 217, 217, 0.8);">
+        <holes id = "hole3" onmouseover="hover(3)" onmouseout="out(3)" onclick= "playGame(3)" style = "left: 33%;top: 52%; background:rgba(217, 217, 217, 0.8);">
         </holes>
-        <holes id = "hole9" onclick= "playGame(9)" style = "left: 50%;top: 5%; background:#604141;">
+        <holes id = "hole9" onmouseover="hover(9)" onmouseout="out(9)" onclick= "playGame(9)" style = "left: 50%;top: 5%; background:#604141;">
         </holes>
-        <holes id = "hole4" onclick= "playGame(4)" style = "left: 50%;top: 52%; background:rgba(217, 217, 217, 0.8);">
+        <holes id = "hole4" onmouseover="hover(4)" onmouseout="out(4)" onclick= "playGame(4)" style = "left: 50%;top: 52%; background:rgba(217, 217, 217, 0.8);">
         </holes>
-        <holes id = "hole8" onclick= "playGame(8)" style = "left: 67%;top: 5%; background:#604141;">
+        <holes id = "hole8" onmouseover="hover(8)" onmouseout="out(8)" onclick= "playGame(8)" style = "left: 67%;top: 5%; background:#604141;">
         </holes>
-        <holes  id = "hole5" onclick= "playGame(5)" style = "left: 67%;top: 52%; background:rgba(217, 217, 217, 0.8);">
+        <holes  id = "hole5" onmouseover="hover(5)" onmouseout="out(5)" onclick= "playGame(5)" style = "left: 67%;top: 52%; background:rgba(217, 217, 217, 0.8);">
         </holes>
-        <holes id = "hole7" onclick= "playGame(7)" style = "left: 83%;top: 5%; background:#604141;">
+        <holes id = "hole7" onmouseover="hover(7)" onmouseout="out(7)" onclick= "playGame(7)" style = "left: 83%;top: 5%; background:#604141;">
         </holes>
-        <holes id = "hole6" onclick= "playGame(6)" style = "left: 83%;top: 52%; background:rgba(217, 217, 217, 0.8);">
+        <holes id = "hole6" onmouseover="hover(6)" onmouseout="out(6)" onclick= "playGame(6)" style = "left: 83%;top: 52%; background:rgba(217, 217, 217, 0.8);">
         </holes>
     </div>    
 
    
     <!-- This is the instructions pop up -->
    <div id = "Instructions"  style = "visibility:visible;left: 397px;top: 194px;">
+        <button id = "exit" onclick="StartGame()" style="right:100%; top: 0%;">
+            Exit
+        </button>
         <h3 id = "instruct1" style=" visibility:visible; padding: 20px;color: #000000;line-height: 39px;font-size: 32px;font-weight: 400;font-family: 'Inter';font-style: normal">
             How To Play: <br> <br>
             The Goal of this game is to have more houses captured than your Opponent. A house is any hole on the board that has exactly 4 stones.<br>
@@ -95,6 +98,10 @@
         <button id="yay" style = "left: 81%;top: 275%;visibility: hidden;color: black;" onclick="StartGame()">
             I'm Ready! 
         </button>
+   </div>
+
+   <div id = "LearnMore" style="font-size: 12px;">
+    <h3>Click Here to learn more about <a href="">Nigeria</a>, <a href=""> Other Nigerian Games</a>, or to <a href="">watch a video of the Ayo Game</a></h3>
    </div>
 
 

@@ -1,11 +1,23 @@
-   
-   var gameplaying = true;
+   //other improvements 
+    // add the player bench images
+    //add num by holes so users can see what how to play/use it. -- done
+    // add a beginner version
+    // add an x to skip the instructions page -- done
+    //make the boxes on the instructions line up
+    // animations?
+    // add the link to learn about ayo -- done
+    // figure font ;
+    
+    
+    var gameplaying = true;
     var playerTurn = 1;
     var arr = [4,4,4,4,4,4,4,4,4,4,4,4];
     var end = 0;
     var Player1Bench = 0;
     var Player2Bench = 0;
     var obj;
+    var old1;
+    var old2;
 
 function Intro(){
     document.getElementById("Instructions").style.overflow = "scroll";
@@ -37,13 +49,12 @@ function numToStone(value,left,top){
     newStone.style.top = top+'%';
     newStone.style.visibility = "visible";
     hole.appendChild(newStone);
-
 }
 
-function visual(hole, value){
+function visual(hole, howManyPerHole){
     var tempPercent1 = 15;
     var tempPercent2 = 0;
-    for(var count = 0; count<value; count++){
+    for(var count = 0; count<howManyPerHole; count++){
         if(tempPercent1 < tempPercent2){
             var test = tempPercent1;
             tempPercent1 = tempPercent2
@@ -72,10 +83,56 @@ function removeStones(hole){
     }
 }
 
+function removeStonesVisually(hole){
+    var holee = document.getElementById("hole"+hole);
+    while (holee.hasChildNodes()) {
+        holee.removeChild(holee.lastChild);
+    }
+}
+
+//onchange for input
+function hover(hole){
+    var div = obj.board[hole-1]%12;
+    var hov = document.getElementById("hole"+hole);
+    var fill = (div+hole)%12;
+    if(fill == 0){
+        fill = 12;
+    }
+    var dest = document.getElementById("hole"+fill);
+    console.log("hole" + fill + "color: " + dest.style.background);
+    if(div != 0){
+        old1 = hov.style.background;
+        hov.style.background = "white";
+        old2 = dest.style.background;
+        dest.style.background = "white";
+    }
+    var num = obj.board[hole-1];
+    hov.innerHTML = "<span style='color:white'>" + num + "</span>";
+}
+
+function out(hole){
+    var div = obj.board[hole-1]%12;
+    var teext = document.getElementById("hole"+hole);
+    var fill = (div+hole)%12;
+    if(fill == 0){
+        fill = 12;
+    }
+    var destt = document.getElementById("hole"+fill);
+    if(div != 0){
+        teext.style.background = old1;
+        destt.style.background = old2;
+    }
+    var num = obj.board[hole-1];
+    teext.innerHTML = "";
+    visual(hole, num);
+}
+
 function StartGame(){
     document.getElementById("Instructions").style.visibility = "hidden";
     document.getElementById("yay").style.visibility = "hidden";
     document.getElementById("instruct3").style.visibility = "hidden";
+    document.getElementById("instruct1").style.visibility = "hidden";
+
 
     /* change the color of player depending onn turn */
     if(playerTurn%2 == 0){
@@ -98,8 +155,6 @@ function StartGame(){
         document.getElementById("player1").style.boxShadow = "10px 10px 5px rgba(217, 217, 217, 0.8)";
         document.getElementById("player2").style.boxShadow = "5px 5px 5px";
 
-
-
         for(var x = 1; x<7; x++){
             document.getElementById("hole"+x).style.background = "rgba(217, 217, 217, 0.8)"
         }
@@ -115,6 +170,17 @@ function StartGame(){
     }
 }
 
+function endq(){
+    var total = 0;
+    for(var c = 0; c<12; c++){
+        total += obj.board[c];
+    }
+    if(total > 8){
+        return false;
+    } else {
+        return true;
+    }
+}
 
 function playGame(hole){
     let move = obj.board[hole-1];
@@ -122,7 +188,6 @@ function playGame(hole){
 /* If an empty hole is selected: error */
     if(move <= 0){
         window.alert("That's an empty hole, you can only move stones from a hole\nwith at least 1 stone. \nTry again");
-        //game keeps playing after this instead of stopping/pausing;
         gameplaying = false;
     }
     
@@ -150,6 +215,7 @@ function playGame(hole){
                 pos = pos%12;
             }
             obj.board[pos]++;
+            removeStonesVisually(hole);
             visual(hole, obj.board[pos]); 
         }
         let text = "hole" + hole;
@@ -168,37 +234,17 @@ function playGame(hole){
                         Player2Bench++;
                         visual(-2,4);
                     }
-                    console.log("bench1 = " + Player1Bench);
-                    console.log("bench2 = " + Player2Bench);
                     removeStones(one+1);
                 }
             }
             playerTurn++;
-            console.log("PlayerTurn: "+playerTurn);
             StartGame(); 
         } 
-    } else {
-        gameplaying = true;
-        if(playerTurn%2 == 0){
-            for(var x = 7; x<13; x++){
-                document.getElementById("hole"+x).style.background = "rgba(217, 217, 217, 0.8)";
-            }
-            for(var x = 1; x<7; x++){
-                document.getElementById("hole"+x).style.background = "#604141"
-            }
-            // obj = {player: 2, board: arr};
-        } else {
-            for(var x = 1; x<7; x++){
-                document.getElementById("hole"+x).style.background = "rgba(217, 217, 217, 0.8)"
-            }
-            for(var x = 7; x<13; x++){
-                document.getElementById("hole"+x).style.background = "#604141";
-            }
-            // obj = {player: 1, board: arr};
-        }
-
+    } 
+    if (endq() == true){
+        gameEnd();
     }
-
+    gameplaying = true;
 }
 
 
@@ -210,6 +256,13 @@ function gameEnd(){
     } else {
         alert("Draw ^-^");
     }
+    for(var t = 1; t<13;t++){
+        var rem = document.getElementById("hole"+c)
+        removeStones(t);
+    }
     gameplaying = false;
+    StartGame();
+
+
 }
 
